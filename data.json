@@ -1,0 +1,23 @@
+{
+ "name": "flare",
+ "children": [
+  {
+    "name": "BetweennessCentrality", 
+    "size": 1000,
+    "type":"root",
+    "children":[
+      {"name":"abc","size":8,"type":"leaf"},
+      {"name":"abc","size":17,"type":"leaf"},
+      {"name":"abc","size":21,"type":"leaf"}
+    ]
+  },
+  {
+    "name": "LinkDistance", 
+    "size": 1000,
+    "type":"root",
+    "children":[
+      {"name":"abc","size":32,"type":"leaf"}
+    ]
+  }
+ ]
+}

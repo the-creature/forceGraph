@@ -1,0 +1,36 @@
+svg {
+  font-family: 'Helvetica Neue';
+  text-transform: capitalize;
+}
+
+.link {
+  stroke: #ccc;
+}
+
+.node text {
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+
+svg {
+  border: 1px solid;
+}
+
+.root{
+  fill:#BECDD5;
+}
+
+.root:hover{
+  stroke-width:5px;
+  stroke:#DFC555;
+}
+
+.root text{
+  color:red;
+}
+
+.leaf {
+  fill: white;
+  stroke-width: 4px;
+  stroke:#002960;
+}
