@@ -7,6 +7,7 @@
 <body>
 <script src="d3.v3.min.js"></script>
 <script>
+
 var width = 1024,
     height = 768,
     root;
@@ -19,7 +20,8 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-var link,node;
+var link = svg.selectAll(".link"),
+    node = svg.selectAll(".node");
 
 
 d3.json("data.json", function(error, json) {
@@ -32,24 +34,15 @@ d3.json("data.json", function(error, json) {
 function update() {
   var nodes = flatten(root);
   var links = d3.layout.tree().links(nodes);
-  var MinMaxNode = d3.extent(nodes, function(d) { return d.size; });
-  var bubbleScale = d3.scale.linear().domain(MinMaxNode).range([30, 320]);
-  var linkScale = d3.scale.linear().domain(MinMaxNode).range([110,420]);
 
   // Restart the force layout.
   force
       .nodes(nodes)
       .links(links)
-      .linkStrength(1)
-      .friction(0.5)
-      .linkDistance(function(d){ return linkScale(d.target.size); })
-      .charge(-1000)
-      .theta(0.1)
-      .alpha(0.1)
       .start();
 
   // Update the links…
-  link = svg.selectAll(".link").data(links, function(d) { return d.target.id; });
+  link = link.data(links, function(d) { return d.target.id; });
 
   // Exit any old links.
   link.exit().remove();
@@ -65,39 +58,29 @@ function update() {
       .attr("y2", function(d) { return d.target.y; });
 
   // Update the nodes…
-  node = svg.selectAll(".node")
-            .data(nodes, function(d) { return d.id; });
-
-  node.exit().remove();
-
-  node.enter().append("g")
-  .attr("class","node")
-  .call(force.drag);
+  node = node.data(nodes, function(d) { return d.id; });
 
   // Exit any old nodes.
-  
+  node.exit().remove();
 
   // Enter any new nodes.
-    node.append("circle")
+  node.enter().append("circle")
       .attr("class", function(d){
         return d.children || d._children ? "node" : "leaf";
       })
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
       .attr("r", function(d) { 
-        if(d.type == "root") return 60;
-        return bubbleScale(d.size) || 0; 
+        return 60;
       })
       .style("fill", color)
-      .on("click", click);
+      .on("click", click)
+      .call(force.drag);
 
-    
-
-    node.append("text")
-      .attr("dx", -16)
+  node.append("text")
+      .attr("dx", 12)
       .attr("dy", ".35em")
-      .text(function(d) { 
-        return d.name !== 'flare' ? d.name : '';
-      });
-
+      .text(function(d) { return d.name });
 
 
 
@@ -113,7 +96,8 @@ function tick() {
       .attr("x2", function(d) { return d.target.x; })
       .attr("y2", function(d) { return d.target.y; });
 
-  node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  node.attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
 }
 
 // Color leaf nodes orange, and packages white or blue.
@@ -149,6 +133,7 @@ function flatten(root) {
   
   return nodes;
 }
+
 
 
 
