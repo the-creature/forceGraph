@@ -2,21 +2,63 @@
  "name": "flare",
  "children": [
   {
-    "name": "BetweennessCentrality", 
+    "name": "Telnor", 
     "size": 1000,
     "type":"root",
     "children":[
-      {"name":"abc","size":8,"type":"leaf"},
-      {"name":"abc","size":17,"type":"leaf"},
-      {"name":"abc","size":21,"type":"leaf"}
+      {"name":"Oscar","size":8,"type":"leaf"},
+      {"name":"Vineet","size":17,"type":"leaf"},
+      {"name":"Farhad","size":21,"type":"leaf"}
     ]
   },
   {
-    "name": "LinkDistance", 
+    "name": "SuperMarket", 
     "size": 1000,
     "type":"root",
     "children":[
-      {"name":"abc","size":32,"type":"leaf"}
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"}
+    ]
+  },
+  {
+    "name": "Bankster", 
+    "size": 1000,
+    "type":"root",
+    "children":[
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"},
+      {"name":"Liccy","size":32,"type":"leaf"},
+      {"name":"Daniel","size":32,"type":"leaf"},
+      {"name":"Chris","size":32,"type":"leaf"},
+      {"name":"Jeremy","size":32,"type":"leaf"}
     ]
   }
  ]
