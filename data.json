@@ -3,24 +3,29 @@
  "children": [
   {
     "name": "Telnor", 
-    "size": 1000,
+    "size": 46,
     "type":"root",
     "children":[
       {"name":"Oscar","size":8,"type":"leaf"},
-      {"name":"Vineet","size":17,"type":"leaf"},
-      {"name":"Farhad","size":21,"type":"leaf"}
+      {"name":"Vineet","size":40,"type":"leaf"},
+      {"name":"Farhad","size":100,"type":"leaf"}
     ]
   },
   {
     "name": "SuperMarket", 
-    "size": 1000,
+    "size": 531,
     "type":"root",
     "children":[
-      {"name":"Liccy","size":32,"type":"leaf"},
-      {"name":"Daniel","size":32,"type":"leaf"},
-      {"name":"Chris","size":32,"type":"leaf"},
-      {"name":"Jeremy","size":32,"type":"leaf"}
+      {"name":"Liccy","size":1,"type":"leaf"},
+      {"name":"Daniel","size":400,"type":"leaf"},
+      {"name":"Chris","size":63,"type":"leaf"},
+      {"name":"Jeremy","size":90,"type":"leaf"}
     ]
+  },
+  {
+    "name": "Lonely", 
+    "size": 531,
+    "type":"root"
   },
   {
     "name": "Bankster", 

@@ -33,8 +33,8 @@ function update() {
   var nodes = flatten(root);
   var links = d3.layout.tree().links(nodes);
   var MinMaxNode = d3.extent(nodes, function(d) { return d.size; });
-  var bubbleScale = d3.scale.linear().domain(MinMaxNode).range([30, 320]);
-  var linkScale = d3.scale.linear().domain(MinMaxNode).range([110,420]);
+  var bubbleScale = d3.scale.linear().domain(MinMaxNode).range([20, 120]);
+  var linkScale = d3.scale.linear().domain(MinMaxNode).range([130,420]);
 
   // Restart the force layout.
   force
@@ -43,6 +43,7 @@ function update() {
       .linkStrength(1)
       .friction(0.5)
       .linkDistance(function(d){ return linkScale(d.target.size); })
+      .gravity(0.1)
       .charge(-1000)
       .theta(0.1)
       .alpha(0.1)
@@ -82,7 +83,7 @@ function update() {
       return d.children || d._children ? "node" : "leaf";
     })
     .attr("r", function(d) { 
-      if(d.type == "root") return 60;
+      // if(d.type == "root") return 90;
       return bubbleScale(d.size) || 0; 
     })
     .style("fill", color)
