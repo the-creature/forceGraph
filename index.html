@@ -42,7 +42,9 @@ function update() {
       .links(links)
       .linkStrength(1)
       .friction(0.5)
-      .linkDistance(function(d){ return linkScale(d.target.size); })
+      .linkDistance(function(d){ 
+        return linkScale(d.target.size); 
+      })
       .gravity(0.1)
       .charge(-1000)
       .theta(0.1)
